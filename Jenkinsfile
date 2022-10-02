@@ -9,10 +9,11 @@ pipeline {
 		stage ('clone-GOL') {
 		steps {
 		dir ('/mnt/GOL') {
+			sh "rm -rf /root/.m2"
 			sh "rm -rf *"
 			sh "git clone https://github.com/ronitunale/game-of-life.git"
+			sh "chmod -R 777 /mnt/GOL/game-of-life/"
 			sh "cd /mnt/GOL/game-of-life"
-			sh "chmod -R 777 /mnt"
 			sh "mvn"
 		}
 		}
