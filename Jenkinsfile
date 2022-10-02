@@ -29,7 +29,6 @@ pipeline {
 		steps {
 			dir ('/mnt/GOL/game-of-life') {
 			
-			sh "rm -rf *"
 			sh "cp gameoflife.war /mnt/server/apache-tomcat-9.0.67/webapps/"
 			
 			}
