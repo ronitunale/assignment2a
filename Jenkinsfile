@@ -35,6 +35,15 @@ pipeline {
 			}
 			}
 			
-	
+			stage ('deployment-on-slave') {
+				steps {
+					dir ('/mnt/server/apache-tomcat-9.0.67/webapps') {
+					sh "scp -i linuxm.pem /mnt/server/apache-tomcat-9.0.67/webapps/gameoflife.war ec2-user@172.31.44.82://mnt/server/apache-tomcat-9.0.67/webapps"	
+						
+						
+					}
+					
+				}	
+			}
 	}
 }
