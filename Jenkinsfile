@@ -11,6 +11,7 @@ pipeline {
 		dir ('/mnt/GOL') {
 			sh "rm -rf *"
 			sh "git clone https://github.com/ronitunale/game-of-life.git"
+			sh "cd /mnt/GOL/game-of-life"
 			sh "mvn install"
 			sh "chmod -R 777 /mnt"
 		}
