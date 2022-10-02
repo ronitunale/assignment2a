@@ -35,15 +35,6 @@ pipeline {
 			}
 			}
 			
-		stage ('restart-tomcat') {
-		steps {
-		dir ('/mnt/server/apache-tomcat-9.0.67/bin') {
-			sh "./shutdown.sh"
-			sh "./startup.sh"
-
-			}
-		}
-	}
 	
 	}
 }
